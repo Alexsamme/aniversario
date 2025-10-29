@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Álbum de Recuerdos 💜💛</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======= PORTADA ======= -->
+  <section id="portada" class="active">
+    <div class="fondo-portada"></div>
+    <div class="contenido-portada">
+      <h1>💜 Álbum de Recuerdos 💛</h1>
+      <h2><span class="chicha">Chicha Morada</span> & <span class="maracuya">Maracuyá</span></h2>
+      <p>Nuestro album de recuerdos juntos amor 💕</p>
+
+      <!-- Contador -->
+      <div id="contador">
+        <h3>cumplimos en... 💞</h3>
+        <div class="tiempo" id="tiempo"></div>
+      </div>
+
+      <button id="abrirAlbum">📖 Abrir álbum</button>
+    </div>
+  </section>
+
+  <!-- ======= ÁLBUM ======= -->
+  <section id="album">
+    <h1 class="titulo-album">💜 Chicha Morada & Maracuyá 💛</h1>
+
+    <div class="slideshow-container">
+      <!-- Ositos -->
+      <img src="img/10.jpg" alt="Dudu" class="oso oso-izquierdo">
+      <img src="img/11.jpg" alt="Bubu" class="oso oso-derecho">
+
+      <!-- Slides -->
+      <div class="slide fade"><img src="img/1.jpg" alt="Recuerdo 1"></div>
+      <div class="slide fade"><img src="img/2.jpg" alt="Recuerdo 2"></div>
+      <div class="slide fade"><img src="img/3.jpg" alt="Recuerdo 3"></div>
+      <div class="slide fade"><img src="img/4.jpg" alt="Recuerdo 4"></div>
+      <div class="slide fade"><img src="img/5.jpg" alt="Recuerdo 5"></div>
+      <div class="slide fade"><img src="img/6.jpg" alt="Recuerdo 6"></div>
+      <div class="slide fade"><img src="img/7.jpg" alt="Recuerdo 7"></div>
+      <div class="slide fade"><img src="img/8.jpg" alt="Recuerdo 8"></div>
+      <div class="slide fade"><img src="img/9.jpg" alt="Recuerdo 9"></div>
+
+      <!-- Flechas -->
+      <a class="prev" onclick="cambiarSlide(-1)">&#10094;</a>
+      <a class="next" onclick="cambiarSlide(1)">&#10095;</a>
+    </div>
+
+    <button id="volver">⬅ Volver a la portada</button>
+  </section>
+
+  <!-- 🎵 Música de fondo -->
+  <audio id="musicaFondo" src="musica/amor.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* ===== PORTADA ===== */
+#portada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+#portada.active {
+  display: flex;
+}
+
+.fondo-portada {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6b21a8, #facc15);
+  background-size: 400% 400%;
+  animation: fondoAnimado 12s ease infinite;
+  z-index: 0;
+}
+
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.contenido-portada {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.1);
+  padding: 40px 60px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-family: 'Courgette', cursive;
+  font-size: 2.6em;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.chicha { color: #d8b4fe; }
+.maracuya { color: #fde047; }
+
+p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+/* Contador */
+#contador {
+  margin-top: 25px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 15px 25px;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#contador h3 {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.tiempo {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #fff;
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #8b5cf6, #facc15);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255,255,255,0.5);
+}
+
+/* ===== ÁLBUM ===== */
+#album {
+  display: none;
+  background: linear-gradient(135deg, #6b21a8, #fde047);
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-top: 20px;
+}
+
+#album.active {
+  display: block;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.titulo-album {
+  font-family: 'Courgette', cursive;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+  position: relative;
+  margin: 0 auto;
+  height: 70vh;
+  width: 70%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* Flechas */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  transition: 0.3s;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.3);
+  user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Ositos */
+.oso {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: auto;
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.oso-izquierdo {
+  left: 70px;
+}
+
+.oso-derecho {
+  right: 70px;
+}
+
+/* Botón volver */
+#volver {
+  position: relative;
+  margin-top: 25px;
+  background: linear-gradient(90deg, #6d28d9, #eab308);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade {
+  animation: fade 1s ease-in-out;
+}
